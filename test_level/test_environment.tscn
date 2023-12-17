@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://dowvk531n4y5x"]
+[gd_scene load_steps=28 format=3 uid="uid://dowvk531n4y5x"]
 
-[ext_resource type="Script" path="res://RespawnArea.gd" id="1_l3d50"]
-[ext_resource type="PackedScene" uid="uid://c4dyfiufsjalg" path="res://Player.tscn" id="2_lj6sm"]
+[ext_resource type="PackedScene" uid="uid://chfcgj7ffbgfh" path="res://check_point.tscn" id="1_icm3h"]
+[ext_resource type="Script" path="res://test_level/RespawnArea.gd" id="1_kbv5c"]
+[ext_resource type="PackedScene" uid="uid://c4dyfiufsjalg" path="res://test_level/Player.tscn" id="2_pxssl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_m2n6p"]
 size = Vector3(2, 1, 2)
@@ -78,6 +79,15 @@ size = Vector3(75, 1, 75)
 
 [node name="TestEnvironment" type="Node3D"]
 
+[node name="CheckPoint" parent="." instance=ExtResource("1_icm3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -10)
+
+[node name="CheckPoint2" parent="." instance=ExtResource("1_icm3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -2.41499)
+
+[node name="CheckPoint3" parent="." instance=ExtResource("1_icm3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 7.98501)
+
 [node name="Level" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Level"]
@@ -122,15 +132,6 @@ mesh = SubResource("BoxMesh_m2n6p")
 [node name="StaticBody3D" type="StaticBody3D" parent="Level/MeshInstance3D5"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/MeshInstance3D5/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_7foju")
-
-[node name="MeshInstance3D19" type="MeshInstance3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 8)
-mesh = SubResource("BoxMesh_m2n6p")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Level/MeshInstance3D19"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/MeshInstance3D19/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_7foju")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Level"]
@@ -342,7 +343,7 @@ shape = SubResource("ConcavePolygonShape3D_i50pm")
 
 [node name="RespawnArea" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
-script = ExtResource("1_l3d50")
+script = ExtResource("1_kbv5c")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RespawnArea"]
 mesh = SubResource("PlaneMesh_6uvgf")
@@ -364,7 +365,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, 8)
 [node name="Spawn3" type="Marker3D" parent="SpawnPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3, -2)
 
-[node name="Player" parent="." node_paths=PackedStringArray("spawn_point") instance=ExtResource("2_lj6sm")]
+[node name="Player" parent="." node_paths=PackedStringArray("spawn_point") instance=ExtResource("2_pxssl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5, -4)
 spawn_point = NodePath("../SpawnPoints/Spawn1")
 
