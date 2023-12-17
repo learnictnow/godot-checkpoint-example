@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://dowvk531n4y5x"]
 
-[ext_resource type="PackedScene" uid="uid://chfcgj7ffbgfh" path="res://check_point.tscn" id="1_icm3h"]
+[ext_resource type="PackedScene" uid="uid://b62gon5emdv2f" path="res://check_point.tscn" id="1_icm3h"]
 [ext_resource type="Script" path="res://test_level/RespawnArea.gd" id="1_kbv5c"]
 [ext_resource type="PackedScene" uid="uid://c4dyfiufsjalg" path="res://test_level/Player.tscn" id="2_pxssl"]
 

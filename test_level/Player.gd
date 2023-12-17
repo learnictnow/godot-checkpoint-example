@@ -36,3 +36,6 @@ func _physics_process(delta):
 func respawn():
 	velocity = Vector3.ZERO
 	global_position = spawn_point.global_position
+
+func update_spawn_point(sp:Marker3D):
+	spawn_point = sp
