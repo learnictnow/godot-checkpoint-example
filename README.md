@@ -1,2 +1,2 @@
 # godot-test-level
-This is a test environment that includes a level and a basic third person character controller
+Multiple checkpoints have been added to the script. When the player enters the area the checkpoint is activated and the player will respawn at the most recent checkpoint.
